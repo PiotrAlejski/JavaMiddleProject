@@ -11,7 +11,9 @@ public class UserService {
     }
 
     public boolean authenticate(User user) {
+        DataService dataService = new DataService();
+        User userFromFile = dataService.loadData();
 
-        return false;
+        return user.equals(userFromFile);
     }
 }
